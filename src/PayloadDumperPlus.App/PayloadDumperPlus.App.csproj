@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\PayloadDumperPlus.Core\PayloadDumperPlus.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\reward.png" LogicalName="DroidGrab.Assets.reward.png" />
+    <EmbeddedResource Include="Assets\coffee.png" LogicalName="DroidGrab.Assets.coffee.png" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>DroidGrab</AssemblyName>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <!-- 发布形态：win-x64 自包含单文件。这些参数以前只写在 CHANGELOG 的命令行里，
+         和实际产物容易对不上，这里固化下来。 -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+
+    <!-- 高 DPI：只在这里声明 PerMonitorV2。app.manifest 里不再写 dpiAware/dpiAwareness，
+         两处同时声明会触发 WFAC010 警告；longPathAware、supportedOS 仍留在 app.manifest。 -->
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+
+    <!-- 发布输出固定到仓库根的 dist/：README 里那条 publish 命令跑完就能直接拿到 dist/DroidGrab.exe。 -->
+    <PublishDir>$(MSBuildThisFileDirectory)..\..\dist\</PublishDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>0.6.0</Version>
+    <AssemblyVersion>0.6.0.0</AssemblyVersion>
+    <FileVersion>0.6.0.0</FileVersion>
+    <Product>DroidGrab</Product>
+    <AssemblyTitle>DroidGrab</AssemblyTitle>
+    <Description>安卓分区提取器：OTA / 线刷包分区提取（多线程下载 + 多线程提取）</Description>
+    <Copyright>MIT License</Copyright>
+  </PropertyGroup>
+
+</Project>

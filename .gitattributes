@@ -1,0 +1,15 @@
+# 默认按文本处理，提交时统一为 LF，检出时由各平台决定
+* text=auto
+
+*.cs       text diff=csharp
+*.csproj   text
+*.sln      text
+*.md       text
+*.json     text
+*.py       text
+*.manifest text
+
+*.png  binary
+*.ico  binary
+*.bin  binary
+*.exe  binary

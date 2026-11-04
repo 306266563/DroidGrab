@@ -1,0 +1,23 @@
+# 构建产物
+bin/
+obj/
+dist/
+release/
+
+# IDE
+.vs/
+.idea/
+*.user
+*.suo
+
+# 调试与临时文件
+*.log
+*.pdb
+*.tmp
+
+# 审计报告（含本机路径，仅本地留档，不随仓库发布）
+audit/
+
+# 自测样本与大文件（由 make_sample_payload.py 现场生成）
+tests/PayloadDumperPlus.Tests/samples/*.bin
+tests/PayloadDumperPlus.Tests/samples/extracted/

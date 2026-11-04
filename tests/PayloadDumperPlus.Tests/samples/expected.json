@@ -1,0 +1,25 @@
+{
+  "payload": "sample_full.bin",
+  "partitions": {
+    "boot": {
+      "size": 4194304,
+      "sha256": "e05ee7421b3491c648afbd1fe4ae29af90cc582a0a0abc952c3174a0e2b2724f"
+    },
+    "system": {
+      "size": 12582912,
+      "sha256": "fc0707bc38e2b9c95de563bda01ba26a4fba59281056e0fff3d5d50d3e896967"
+    },
+    "vendor": {
+      "size": 6291456,
+      "sha256": "9ab7e0c51e06f7cd3d667177942361ab2c0232024678f879241f379622b029c8"
+    },
+    "product": {
+      "size": 81920,
+      "sha256": "ccc866a68b0a493b586237f4ec27da55afc95b6cc145c510dbbd1748ef7ca891"
+    },
+    "odm_dlkm": {
+      "size": 32768,
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    }
+  }
+}
